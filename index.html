@@ -1,14 +1,39 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/style/style.css">
-    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/48938155eb24b4ccdde09426066869504c6dab3c/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/style/font-awesome.min.css">
-    <script src="https://maps.googleapis.com/maps/api/js"></script>
-  </head>
-  <body>
-    <div class="container"></div>
-  </body>
-  <script src="/bundle.js"></script>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/48938155eb24b4ccdde09426066869504c6dab3c/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/style/font-awesome.min.css">
+		<link rel="stylesheet" href="/style/style.css">
+	</head>
+	<body>
+		<div class="container">
+			<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+				<a class="navbar-brand" style="font-weight: 700;" href="#">ScreenR</a>
+				<a class="navbar-brand navbar-lighter" href="#">My Videos</a>
+				<a class="navbar-brand navbar-lighter" href="#">Preferences</a>
+			</nav>
+
+			<div class="row content-wrapper">
+				<div class="col-md-8">
+					<nav class="breadcrumb">
+						<a class="breadcrumb-item" href="#">Home</a> /
+						<a class="breadcrumb-item" href="#">My Videos</a> /
+						<a class="breadcrumb-item" href="#">Review Video</a>
+					</nav>
+
+					<div class="main-content"></div>
+				</div>
+				<div class="col-md-3  col-md-offset-1">
+					<div class="sidebar">
+						<h4>Your Badges</h4>
+						<p><img src="/img/binge_watcher.svg" class="badge_icon"> Binge Watcher</p>
+						<p><img src="/img/commentator.svg" class="badge_icon"> Commentator</p>
+						<p><img src="/img/scribe.svg" class="badge_icon"> Nice Job!</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="/bundle.js"></script>
 </html>

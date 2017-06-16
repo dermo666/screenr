@@ -57,7 +57,7 @@ class App extends Component {
 	render() {
 		return (
 			<div>
-				<VideoDetail videoId={5471897138001} accountId={5392214260001}
+				<VideoDetail videoId={5471855135001} accountId={5392214260001}
 					onVideoLoad={videoPlayer => this.setState({videoPlayer}) }/>
 				<VideoReviewBar videoPlayer={this.state.videoPlayer}
 					onReaction={this.onReactionAdd} reactionTypes={this.reactionTypes}/>
@@ -69,5 +69,5 @@ class App extends Component {
 
 ReactDOM.render(
 	<App />,
-	document.querySelector('.container')
+	document.querySelector('.main-content')
 );

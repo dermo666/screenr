@@ -50,7 +50,7 @@ class VideoReviewBar extends Component {
 			<div className="row">
 				{!this.props.videoPlayer && <div>Loading...</div>}
 				{this.props.videoPlayer &&
-					<div className="col-md-8 col-md-offset-2 video-rewiew-bar">
+					<div className="col-md-12 video-rewiew-bar">
 						<div className="video-review-items">
 							{videoReactionItems}
 						</div>

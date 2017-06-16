@@ -1,7 +1,14 @@
+.content-wrapper {
+	padding-top: 50px;
+}
+
+.navbar {
+	background-color: #eceeef;
+}
 
 .video-player {
-    width: 100%;
-    height: auto;
+	width: 100%;
+	height: auto;
 }
 .video-player::after {
 	display: block;
@@ -11,12 +18,15 @@
 
 .video-rewiew-bar {
 	position: relative;
+	margin-top: 10px;
 }
 
 .video-review-items {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	background-color: #eceeef;
+	padding: 10px;
 }
 
 .video-review-text-area-wrapper {
@@ -47,4 +57,14 @@
 
 .reaction-list .media-left img {
 	width: 20px;
+}
+
+.sidebar {
+	padding: 15px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+}
+
+.badge_icon {
+	width: 3em;
 }

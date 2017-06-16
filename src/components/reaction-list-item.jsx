@@ -1,6 +1,9 @@
 import React from 'react';
+import moment from 'moment';
 
 const ReactionListItem = ({reaction, reactionType}) => {
+	let duration = moment.utc(reaction.time * 1000).format("HH:mm:ss");
+
 	return (
 		<li className="list-group-item">
 			<div className="reaction-list media">
@@ -8,7 +11,7 @@ const ReactionListItem = ({reaction, reactionType}) => {
 					<img src={reactionType.src} />
 				</div>
 				<div className="media-left">
-					<div className="">{reaction.time.toFixed(2)}</div>
+					<div className="">{duration}</div>
 				</div>
 				<div className="media-body">
 					<div className="">{reaction.reviewText}</div>

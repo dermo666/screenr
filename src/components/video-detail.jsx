@@ -22,7 +22,7 @@ class VideoDetail extends Component {
 	render() {
 		return (
 			<div className="row">
-				<div className="col-md-8 col-md-offset-2">
+				<div className="col-md-12">
 					<video id="player"
 						data-video-id={this.props.videoId}
 						data-account={this.props.accountId}
