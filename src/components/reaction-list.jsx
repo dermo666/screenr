@@ -4,9 +4,8 @@ import ReactionListItem from './reaction-list-item';
 const ReactionList = (props) => {
 	const reactionItems = props.reactions.map((reaction, index) => {
 		return (
-			<ReactionListItem
- 			key={index}
-			reaction={reaction} />
+			<ReactionListItem key={index}
+			reaction={reaction} reactionType={props.reactionTypes[reaction.reactionName]} />
 		);
 	});
 

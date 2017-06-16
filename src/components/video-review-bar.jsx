@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
+import VideoReactionItem from './video-reaction-item';
+
 
 class VideoReviewBar extends Component {
 	constructor(props) {
 		super(props)
+
+		this.onIconClick = this.onIconClick.bind(this);
 	}
 
-	onIconClick(reactionType) {
+	onIconClick(reactionName) {
 		let reaction = {
-			reactionType: reactionType,
+			reactionName: reactionName,
 			time: this.props.videoPlayer.currentTime()
 		};
 
@@ -15,33 +19,22 @@ class VideoReviewBar extends Component {
 	}
 
 	render() {
+		const videoReactionItems = Object.keys(this.props.reactionTypes).map((reactionName) => {
+			return (
+				<VideoReactionItem key={reactionName}
+					reactionName={reactionName}
+					reactionType={this.props.reactionTypes[reactionName]}
+					onIconClick={this.onIconClick} />
+			);
+		});
+
 		return (
 			<div className="row">
 				<div className="col-md-8 col-md-offset-2">
 				{!this.props.videoPlayer && <div>Loading...</div>}
 				{this.props.videoPlayer &&
-					<div className="row">
-						<div className="col-md-1">
-							<img onClick={() => { this.onIconClick('like') }} src="/img/1f603.png" />
-						</div>
-						<div className="col-md-1">
-							<img onClick={() => { this.onIconClick('dislike') }} src="/img/2639.png" />
-						</div>
-						<div className="col-md-1">
-							<img onClick={() => { this.onIconClick('love') }} src="/img/1f60d.png" />
-						</div>
-						<div className="col-md-1">
-							<img onClick={() => { this.onIconClick('disappointed') }} src="/img/1f61e.png" />
-						</div>
-						<div className="col-md-1">
-							<img onClick={() => { this.onIconClick('shocked') }} src="/img/1f632.png" />
-						</div>
-						<div className="col-md-1">
-							<img onClick={() => { this.onIconClick('crying') }} src="/img/1f62d.png" />
-						</div>
-						<div className="col-md-1">
-							<img onClick={() => { this.onIconClick('boring') }} src="/img/1f634.png" />
-						</div>
+					<div className="review-items">
+						{videoReactionItems}
 					</div>
 				}
 				</div>

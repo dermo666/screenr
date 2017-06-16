@@ -1,5 +1,20 @@
 
 .video-player {
-    width: 620px;
-    height: 348px;
+    width: 100%;
+    height: auto;
+}
+.video-player::after {
+	display: block;
+	padding-top: 56.25%;
+	content: "";
+}
+
+.review-items {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.reaction-list .media-left img {
+	width: 20px;
 }
