@@ -12,6 +12,7 @@ class VideoReactionText extends Component {
 	render() {
 		return (
 			<div className="video-review-text-area-wrapper bg-faded">
+				<img src={this.props.reaction.src} />
 				<textarea value={this.state.reviewText} onChange={event => this.onInputChange(event.target.value)}></textarea>
 				<button onClick={() => this.props.onSubmitClick(this.state.reviewText)}>Submit</button>
 			</div>

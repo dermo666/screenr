@@ -55,7 +55,8 @@ class VideoReviewBar extends Component {
 							{videoReactionItems}
 						</div>
 						{this.state.showComponent &&
-							<VideoReactionText onSubmitClick={this.onSubmitClick}/>
+							<VideoReactionText onSubmitClick={this.onSubmitClick}
+								reaction={this.props.reactionTypes[this.state.reaction.reactionName]}/>
 						}
 					</div>
 				}

@@ -31,7 +31,18 @@
 
 .video-review-text-area-wrapper textarea {
 	height: 80px;
-	width: 100%;
+	width: 70%;
+	vertical-align: text-bottom;
+}
+
+.video-review-text-area-wrapper img {
+	vertical-align: baseline;
+	margin-right: 10px;
+}
+
+.video-review-text-area-wrapper button {
+	vertical-align: text-bottom;
+	margin-left: 10px;
 }
 
 .reaction-list .media-left img {
