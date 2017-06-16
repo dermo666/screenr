@@ -1,21 +1,39 @@
 import React, { Component } from 'react';
 import VideoReactionItem from './video-reaction-item';
+import VideoReactionText from './video-reaction-text';
 
 
 class VideoReviewBar extends Component {
 	constructor(props) {
 		super(props)
 
+		this.state = {
+			showComponent: false,
+			reaction: {}
+		};
+
 		this.onIconClick = this.onIconClick.bind(this);
+		this.onSubmitClick = this.onSubmitClick.bind(this);
 	}
 
 	onIconClick(reactionName) {
-		let reaction = {
-			reactionName: reactionName,
-			time: this.props.videoPlayer.currentTime()
-		};
+		this.setState({
+			reaction: {
+				reactionName: reactionName,
+				time: this.props.videoPlayer.currentTime()
+			},
+			showComponent: true
+		});
+	}
+
+	onSubmitClick(reviewText) {
+		console.log(reviewText);
+		let reaction = Object.assign({}, this.state.reaction);
+		reaction.reviewText = reviewText;
 
 		this.props.onReaction(reaction);
+
+		this.setState({ showComponent:false, reaction: {} });
 	}
 
 	render() {
@@ -30,14 +48,17 @@ class VideoReviewBar extends Component {
 
 		return (
 			<div className="row">
-				<div className="col-md-8 col-md-offset-2">
 				{!this.props.videoPlayer && <div>Loading...</div>}
 				{this.props.videoPlayer &&
-					<div className="review-items">
-						{videoReactionItems}
+					<div className="col-md-8 col-md-offset-2 video-rewiew-bar">
+						<div className="video-review-items">
+							{videoReactionItems}
+						</div>
+						{this.state.showComponent &&
+							<VideoReactionText onSubmitClick={this.onSubmitClick}/>
+						}
 					</div>
 				}
-				</div>
 			</div>
 		)
 	}

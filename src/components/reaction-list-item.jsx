@@ -7,8 +7,11 @@ const ReactionListItem = ({reaction, reactionType}) => {
 				<div className="media-left">
 					<img src={reactionType.src} />
 				</div>
+				<div className="media-left">
+					<div className="">{reaction.time.toFixed(2)}</div>
+				</div>
 				<div className="media-body">
-					<div className="media-heading">{reaction.time.toFixed(2)}</div>
+					<div className="">{reaction.reviewText}</div>
 				</div>
 			</div>
 		</li>

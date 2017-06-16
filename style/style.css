@@ -9,10 +9,29 @@
 	content: "";
 }
 
-.review-items {
+.video-rewiew-bar {
+	position: relative;
+}
+
+.video-review-items {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+}
+
+.video-review-text-area-wrapper {
+	position: absolute;
+	top: 50%;
+	width: 80%;
+	left: 10%;
+	padding: 10px;
+	border: 1px solid darkgray;
+	z-index: 10;
+}
+
+.video-review-text-area-wrapper textarea {
+	height: 80px;
+	width: 100%;
 }
 
 .reaction-list .media-left img {
